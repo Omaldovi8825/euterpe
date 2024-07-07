@@ -1,0 +1,60 @@
+:root {
+  --color-1: #7c2043;
+  /* --header-height: 75px; */
+}
+
+/* Backgrounds */
+.bg1 {
+  background-color: var(--color-1);
+}
+
+/* Colores */
+.col1 {
+  color: var(--color-1);
+}
+
+.borde {
+  border: 1px solid black;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logoHeader {
+  height: 50px;
+}
+
+.parallax {
+  /* height: calc(100vh - var(--header-height)); */
+  height: 100vh;
+  background: url("../assets/images/parallax.png") no-repeat fixed;
+  background-size: cover;
+}
+
+.parallax .btn-inscribete {
+  background-color: #000000a3;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.parallax .btn-inscribete:hover {
+  background-color: #7c2043a8;
+}
+
+/* botones */
+
+.btn-primario {
+  border: none;
+  background-color: var(--color-1);
+  color: white;
+  border-radius: 0.5rem;
+}
+
