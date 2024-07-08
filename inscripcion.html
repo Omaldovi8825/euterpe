@@ -17,12 +17,20 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/main.css" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/main.css" />
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
   </head>
   <body>
     <!-- HEADER -->
@@ -55,36 +63,44 @@
     </header>
     <main>
       <div class="py-4">
-        <h2 class="col1 mb-0 text-center">
+        <h2 class="color1 mb-0 text-center">
           Formato de inscripción - Estudiantes
         </h2>
       </div>
-      <div class="container">
-        <!-- forma de contacto -->
-        <form autocomplete="off" onsubmit="enviarForma(event)">
+      <div class="container" id="form">
+        <!-- Forma de contacto -->
+        <form autocomplete="off" @submit.prevent="enviarForma">
           <div class="row">
             <div class="col-12 mb-3">
-              <h4 class="mb-0 col1">Datos del alumno</h4>
+              <h4 class="mb-0 color1">Datos del alumno</h4>
             </div>
             <div class="col-12 col-md-4 mb-3">
               <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" v-model="nombre" />
             </div>
             <div class="col-12 col-md-4 mb-3">
               <label class="form-label">Apellido paterno</label>
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                class="form-control"
+                v-model="apellidoPaterno"
+              />
             </div>
             <div class="col-12 col-md-4 mb-3">
               <label class="form-label">Apellido materno</label>
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                class="form-control"
+                v-model="apellidoMaterno"
+              />
             </div>
             <div class="col-12 col-md-4 mb-3">
               <label class="form-label">Fecha de nacimiento</label>
-              <input type="date" class="form-control" />
+              <input type="date" class="form-control" v-model="dtNacimiento" />
             </div>
             <div class="col-12 col-md-4 mb-3">
               <label class="form-label">Curso</label>
-              <select class="form-control">
+              <select class="form-control" v-model="tipoCurso">
                 <option value="1">Guitarra niños</option>
                 <option value="2">Guitarra adultos</option>
                 <option value="3">Perfeccionamineto guitarrístico</option>
@@ -93,82 +109,102 @@
                 <option value="6">Bajo eléctrico</option>
               </select>
             </div>
-            <div class="col-12 mb-3">
-              <label class="form-label">Padecimientos o alergias</label>
-              <input type="text" class="form-control" />
+            <div class="col-12 col-md-4 mb-3">
+              <label class="form-label">Modalidad</label>
+              <select class="form-control" v-model="tipoModalidad">
+                <option value="1">Presencial</option>
+                <option value="2">Online</option>
+              </select>
             </div>
-            <div class="col-12 mb-3">
-              <label class="form-label">Notas generales</label>
-              <textarea
-                class="form-control"
-                placeholder="alguna condición a tener en cuenta para el buen desarrollo de la clase"
-              ></textarea>
+            <div class="col-12 col-md-4 mb-3">
+              <label class="form-label">Teléfono (celular)</label>
+              <input type="number" class="form-control" />
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+              <label class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" />
+            </div>
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <h5 class="color1 mb-0">Dirección</h5>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                  <label class="form-label">Calle</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                  <label class="form-label">Número</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                  <label class="form-label">Colonia</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                  <label class="form-label">Código postal</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                  <label class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                  <label class="form-label">Estado</label>
+                  <select class="form-control">
+                    <option value="1">Aguascalientes</option>
+                    <option value="2">Baja California</option>
+                    <option value="3">Baja California Sur</option>
+                    <option value="4">Campeche</option>
+                    <option value="5">Chiapas</option>
+                    <option value="6">Chihuahua</option>
+                    <option value="7">Ciudad de México</option>
+                    <option value="8">Coahuila</option>
+                    <option value="9">Colima</option>
+                    <option value="10">Durango</option>
+                    <option value="11">Estado de México</option>
+                    <option value="12">Guanajuato</option>
+                    <option value="13">Guerrero</option>
+                    <option value="14">Hidalgo</option>
+                    <option value="15">Jalisco</option>
+                    <option value="16">Michoacán</option>
+                    <option value="17">Morelos</option>
+                    <option value="18">Nayarit</option>
+                    <option value="19">Nuevo León</option>
+                    <option value="20">Oaxaca</option>
+                    <option value="21">Puebla</option>
+                    <option value="22">Querétaro</option>
+                    <option value="23">Quintana Roo</option>
+                    <option value="24">San Luis Potosí</option>
+                    <option value="25">Sinaloa</option>
+                    <option value="26">Sonora</option>
+                    <option value="27">Tabasco</option>
+                    <option value="28">Tamaulipas</option>
+                    <option value="29">Tlaxcala</option>
+                    <option value="30">Veracruz</option>
+                    <option value="31">Yucatán</option>
+                    <option value="32">Zacatecas</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
-          <hr />
-          <div class="row">
+          <!-- Datos tutor -->
+          <div class="row" v-if="!esMayorEdad">
             <div class="col-12 mb-3">
-              <h4 class="mb-0 col1">Datos del padre, madre o tutor/a</h4>
+              <hr />
+              <h4 class="mb-0 color1">Datos del padre, madre o tutor(a)</h4>
             </div>
             <div class="col-12 mb-3">
               <label class="form-label">Nombre completo</label>
               <input type="text" class="form-control" />
             </div>
             <div class="col-12 col-md-4 mb-3">
-              <label class="form-label">Calle</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-              <label class="form-label">Número</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-              <label class="form-label">Colonia</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-              <label class="form-label">Código postal</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-              <label class="form-label">Ciudad</label>
-              <input type="text" class="form-control" />
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-              <label class="form-label">Estado</label>
+              <label class="form-label">Parentesco</label>
               <select class="form-control">
-                <option value="1">Aguascalientes</option>
-                <option value="2">Baja California</option>
-                <option value="3">Baja California Sur</option>
-                <option value="4">Campeche</option>
-                <option value="5">Chiapas</option>
-                <option value="6">Chihuahua</option>
-                <option value="7">Ciudad de México</option>
-                <option value="8">Coahuila</option>
-                <option value="9">Colima</option>
-                <option value="10">Durango</option>
-                <option value="11">Estado de México</option>
-                <option value="12">Guanajuato</option>
-                <option value="13">Guerrero</option>
-                <option value="14">Hidalgo</option>
-                <option value="15">Jalisco</option>
-                <option value="16">Michoacán</option>
-                <option value="17">Morelos</option>
-                <option value="18">Nayarit</option>
-                <option value="19">Nuevo León</option>
-                <option value="20">Oaxaca</option>
-                <option value="21">Puebla</option>
-                <option value="22">Querétaro</option>
-                <option value="23">Quintana Roo</option>
-                <option value="24">San Luis Potosí</option>
-                <option value="25">Sinaloa</option>
-                <option value="26">Sonora</option>
-                <option value="27">Tabasco</option>
-                <option value="28">Tamaulipas</option>
-                <option value="29">Tlaxcala</option>
-                <option value="30">Veracruz</option>
-                <option value="31">Yucatán</option>
-                <option value="32">Zacatecas</option>
+                <option value="1">padre</option>
+                <option value="2">madre</option>
+                <option value="3">tutor(a)</option>
               </select>
             </div>
             <div class="col-12 col-md-4 mb-3">
@@ -179,33 +215,51 @@
               <label class="form-label">Teléfono (casa)</label>
               <input type="number" class="form-control" />
             </div>
+
             <div class="col-12 col-md-4 mb-3">
               <label class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" />
             </div>
-          </div>
-          <hr />
-          <div class="row">
+            <div class="col-12 col-md-8 mb-3">
+              <label class="form-label"
+                >Padecimientos o alergias del alumno</label
+              >
+              <input type="text" class="form-control" />
+            </div>
             <div class="col-12 mb-3">
-              <h4 class="mb-0 col1">Contacto de emrgencia</h4>
+              <label class="form-label">Notas generales</label>
+              <textarea
+                class="form-control"
+                placeholder="alguna condición a tener en cuenta para el buen desarrollo de la clase"
+              ></textarea>
+            </div>
+          </div>
+          <!-- Contacto emergencia -->
+          <div class="row" v-if="showContactoEmergencia">
+            <div class="col-12 mb-3">
+              <hr />
+              <h4 class="mb-0 color1">Contacto de emergencia</h4>
             </div>
             <div class="col-12 mb-3">
               <label class="form-label">Nombre completo</label>
               <input type="text" class="form-control" />
             </div>
-            <div class="col-12 col-md-6 mb-3">
+            <div class="col-12 col-md-4 mb-3">
               <label class="form-label">Parentesco</label>
               <input type="text" class="form-control" />
             </div>
-            <div class="col-12 col-md-6 mb-3">
-              <label class="form-label">Teléfono</label>
+            <div class="col-12 col-md-4 mb-3">
+              <label class="form-label">Teléfono (celular)</label>
+              <input type="number" class="form-control" />
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+              <label class="form-label">Teléfono (casa)</label>
               <input type="number" class="form-control" />
             </div>
           </div>
-          <hr />
-          <div class="row">
-            <div class="col-12 mb-3 text-end">
-              <button class="btn-primario py-2 px-3">Enviar</button>
+          <div class="row py-3">
+            <div class="col-12 text-end">
+              <button class="btn-primario py-2 px-4">Enviar</button>
             </div>
           </div>
         </form>
@@ -221,10 +275,5 @@
     </main>
   </body>
 
-  <script>
-    function enviarForma(ev) {
-      ev.preventDefault()
-      console.log("enviando")
-    }
-  </script>
+  <script type="module" src="./js/inscripcion.js"></script>
 </html>
