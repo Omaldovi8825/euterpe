@@ -74,33 +74,37 @@
             <div class="col-12 mb-3">
               <h4 class="mb-0 color1">Datos del alumno</h4>
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" v-model="nombre" />
+              <input type="text" class="form-control" v-model="alumno.nombre" />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Apellido paterno</label>
               <input
                 type="text"
                 class="form-control"
-                v-model="apellidoPaterno"
+                v-model="alumno.apellidoPaterno"
               />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Apellido materno</label>
               <input
                 type="text"
                 class="form-control"
-                v-model="apellidoMaterno"
+                v-model="alumno.apellidoMaterno"
               />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Fecha de nacimiento</label>
-              <input type="date" class="form-control" v-model="dtNacimiento" />
+              <input
+                type="date"
+                class="form-control"
+                v-model="alumno.dtNacimiento"
+              />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Curso</label>
-              <select class="form-control" v-model="tipoCurso">
+              <select class="form-control" v-model="alumno.iCurso">
                 <option value="1">Guitarra niños</option>
                 <option value="2">Guitarra adultos</option>
                 <option value="3">Perfeccionamineto guitarrístico</option>
@@ -109,49 +113,76 @@
                 <option value="6">Bajo eléctrico</option>
               </select>
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Modalidad</label>
-              <select class="form-control" v-model="tipoModalidad">
+              <select class="form-control" v-model="alumno.iModalidad">
                 <option value="1">Presencial</option>
                 <option value="2">Online</option>
               </select>
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Teléfono (celular)</label>
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                class="form-control"
+                v-model="alumno.telefono"
+              />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" />
+              <input type="email" class="form-control" v-model="alumno.email" />
             </div>
             <div class="col-12">
               <div class="row">
                 <div class="col-12 mb-3">
                   <h5 class="color1 mb-0">Dirección</h5>
                 </div>
-                <div class="col-12 col-md-4 mb-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
                   <label class="form-label">Calle</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="alumno.direccion.calle"
+                  />
                 </div>
-                <div class="col-12 col-md-4 mb-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
                   <label class="form-label">Número</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="alumno.direccion.numero"
+                  />
                 </div>
-                <div class="col-12 col-md-4 mb-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
                   <label class="form-label">Colonia</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="alumno.direccion.colonia"
+                  />
                 </div>
-                <div class="col-12 col-md-4 mb-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
                   <label class="form-label">Código postal</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="alumno.direccion.cp"
+                  />
                 </div>
-                <div class="col-12 col-md-4 mb-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
                   <label class="form-label">Ciudad</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    v-model="alumno.direccion.ciudad"
+                  />
                 </div>
-                <div class="col-12 col-md-4 mb-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-3">
                   <label class="form-label">Estado</label>
-                  <select class="form-control">
+                  <select
+                    class="form-control"
+                    v-model="alumno.direccion.iEstado"
+                  >
                     <option value="1">Aguascalientes</option>
                     <option value="2">Baja California</option>
                     <option value="3">Baja California Sur</option>
@@ -197,40 +228,53 @@
             </div>
             <div class="col-12 mb-3">
               <label class="form-label">Nombre completo</label>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" v-model="tutor.nombre" />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Parentesco</label>
-              <select class="form-control">
+              <select class="form-control" v-model="tutor.iParentesco">
                 <option value="1">padre</option>
                 <option value="2">madre</option>
                 <option value="3">tutor(a)</option>
               </select>
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Teléfono (celular)</label>
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                class="form-control"
+                v-model="tutor.telCelular"
+              />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Teléfono (casa)</label>
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                class="form-control"
+                v-model="tutor.telCasa"
+              />
             </div>
 
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
               <label class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" />
+              <input type="email" class="form-control" v-model="tutor.email" />
             </div>
-            <div class="col-12 col-md-8 mb-3">
+            <div class="col-12 col-sm-6 col-lg-8 mb-3">
               <label class="form-label"
                 >Padecimientos o alergias del alumno</label
               >
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                class="form-control"
+                v-model="tutor.padecimientos"
+              />
             </div>
             <div class="col-12 mb-3">
               <label class="form-label">Notas generales</label>
               <textarea
                 class="form-control"
                 placeholder="alguna condición a tener en cuenta para el buen desarrollo de la clase"
+                v-model="tutor.notas"
               ></textarea>
             </div>
           </div>
@@ -242,19 +286,35 @@
             </div>
             <div class="col-12 mb-3">
               <label class="form-label">Nombre completo</label>
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                class="form-control"
+                v-model="contactoEmergencia.nombre"
+              />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
               <label class="form-label">Parentesco</label>
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                class="form-control"
+                v-model="contactoEmergencia.parentesco"
+              />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
               <label class="form-label">Teléfono (celular)</label>
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                class="form-control"
+                v-model="contactoEmergencia.telCelular"
+              />
             </div>
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-md-6 col-lg-4 mb-3">
               <label class="form-label">Teléfono (casa)</label>
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                class="form-control"
+                v-model="contactoEmergencia.telCasa"
+              />
             </div>
           </div>
           <div class="row py-3">
