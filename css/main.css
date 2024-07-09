@@ -67,3 +67,14 @@ body {
   border-color: var(--color-1);
   box-shadow: 0 0 0 0.25rem #7c204347;
 }
+
+/* transitions */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
