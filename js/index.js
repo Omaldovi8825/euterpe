@@ -1,40 +1,40 @@
 import { createApp, ref } from "vue"
+import { CursoCard } from "./components/cursoCard.js"
+import { Footer } from "./components/footer.js"
 
 createApp({
-  data(){
+  components: {
+    cursoCard: CursoCard,
+    mainFooter: Footer,
+  },
+  data() {
     return {
       cursos: [
         {
           id: 1,
           nombre: "Guitarra acústica",
-          img: "guit1.jpeg"
+          img: "guit1.jpeg",
+          link: "guitarra-clasica",
         },
         {
           id: 2,
           nombre: "Guitarra clásica",
-          img: "guitClas.jpeg"
+          img: "guitClas.jpeg",
+          link: "guitarra-clasica",
         },
         {
           id: 3,
           nombre: "Bajo eléctrico",
-          img: "bajo1.jpeg"
+          img: "bajo1.jpeg",
+          link: "guitarra-clasica",
         },
         {
           id: 4,
           nombre: "Ukelele",
-          img: "ukelele1.jpeg"
+          img: "ukelele1.jpeg",
+          link: "guitarra-clasica",
         },
-      ]
+      ],
     }
-  }
-})
-  .component("curso-card", {
-    template: "#cursoCard",
-    props: ["nombre", "img"],
-    computed: {
-      imgUrl(){
-        return `./assets/images/${this.img}`
-      }
-    }
-  })
-  .mount("#cursos")
+  },
+}).mount("#app")

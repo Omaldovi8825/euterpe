@@ -1,6 +1,12 @@
 import { createApp, ref } from "vue"
+import { Header } from "./components/header.js"
+import { Footer } from "./components/footer.js"
 
 createApp({
+  components: {
+    mainHeader: Header,
+    mainFooter: Footer,
+  },
   data() {
     return {
       alumno: {
@@ -126,4 +132,4 @@ createApp({
       })
     },
   },
-}).mount("#form")
+}).mount("#app")
