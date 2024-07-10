@@ -1,5 +1,11 @@
 export const Header = {
-  props: ["logoUrl"],
+  data() {
+    return {
+      hostName: location.hostname,
+      ghHos: "omaldovi8825.github.io",
+      logoBaseUrl: "/assets/images/logo1.png",
+    }
+  },
   template: `
     <header
       class="bg1 d-flex justify-content-around align-items-center py-2 sticky-top"
@@ -29,4 +35,14 @@ export const Header = {
       </nav>
     </header>
   `,
+  computed: {
+    logoUrl() {
+      return this.hostName === this.ghHos
+        ? `/euterpe/${this.logoBaseUrl}`
+        : this.logoBaseUrl
+    },
+    homeUrl() {
+      return this.hostName === this.ghHos ? "/euterpe/" : "/"
+    },
+  },
 }
