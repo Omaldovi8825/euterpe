@@ -22,6 +22,11 @@ ul {
   margin: 0;
 }
 
+/* IDS */
+#header {
+  transition: background-color 1s;
+}
+
 /* Backgrounds */
 .bg1 {
   background-color: var(--color-1);
