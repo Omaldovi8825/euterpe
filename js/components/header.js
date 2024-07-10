@@ -10,7 +10,7 @@ export const Header = {
     <header
       class="bg1 d-flex justify-content-around align-items-center py-2 sticky-top"
     >
-      <a href="/">
+      <a :href="homeUrl">
         <img
           class="logoHeader"
           :src="logoUrl"
