@@ -1,11 +1,6 @@
+import { hostName, ghHos, imagesBaseUrl } from "../constants.js"
+
 export const Header = {
-  data() {
-    return {
-      hostName: location.hostname,
-      ghHos: "omaldovi8825.github.io",
-      logoBaseUrl: "/assets/images/logo1.png",
-    }
-  },
   template: `
     <header
       class="bg1 d-flex justify-content-around align-items-center py-2 sticky-top"
@@ -37,12 +32,11 @@ export const Header = {
   `,
   computed: {
     logoUrl() {
-      return this.hostName === this.ghHos
-        ? `/euterpe/${this.logoBaseUrl}`
-        : this.logoBaseUrl
+      const logoBaseUrl = `${imagesBaseUrl}/logo1.png`
+      return hostName === ghHos ? `/euterpe/${logoBaseUrl}` : `/${logoBaseUrl}`
     },
     homeUrl() {
-      return this.hostName === this.ghHos ? "/euterpe/" : "/"
+      return hostName === ghHos ? "/euterpe/" : "/"
     },
   },
 }

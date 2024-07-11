@@ -24,7 +24,7 @@ ul {
 
 /* IDS */
 #header {
-  transition: background-color 1s;
+  transition: background-color 0.5s;
 }
 
 /* Backgrounds */
@@ -58,13 +58,22 @@ ul {
   cursor: pointer;
 }
 
+.filtro-gris {
+  filter: grayscale(100%);
+  transition: filter 1s;
+}
+
+.filtro-gris:hover {
+  filter: grayscale(100%) blur(4px);
+}
+
 .logoHeader {
   height: 50px;
 }
 
 .parallax {
   height: 75vh;
-  background: url("../assets/images/guitarHero.jpeg") no-repeat fixed;
+  background: url("../assets/images/parallaxDesktop.jpeg") no-repeat fixed;
   background-size: cover;
 }
 
@@ -87,12 +96,19 @@ ul {
   box-shadow: 0 0 0 0.25rem #7c204347;
 }
 
-.card-instrumento {
-  /* height: 15rem; */
+.card-custom {
   position: relative;
-  aspect-ratio: 1 / 1;
   border-radius: 1rem;
   overflow: hidden;
+  /* aspect-ratio: 1 / 1; */
+}
+
+.card-custom img {
+  object-fit: cover;
+}
+
+.card-instrumento {
+  aspect-ratio: 1 / 1;
 }
 
 .card-instrumento h5 {
@@ -102,12 +118,28 @@ ul {
 }
 
 .card-instrumento img {
-  object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 
 .card-instrumento img:hover {
   transform: scale(1.2);
+}
+
+.card-maestro {
+  aspect-ratio: 1 / 1;
+}
+
+.card-maestro .card-maestro-nombre {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.card-maestro:hover > .card-maestro-nombre {
+  opacity: 1;
 }
 
 .icon-no-space::before {
