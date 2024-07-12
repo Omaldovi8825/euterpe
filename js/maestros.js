@@ -19,7 +19,7 @@ class Maestro {
   }
 }
 
-const maestroGabriel = new Maestro(
+const gabrielM = new Maestro(
   1,
   "Gabriel",
   "Méndez",
@@ -29,7 +29,7 @@ const maestroGabriel = new Maestro(
   [guitarraAcustica, guitarraClasica, ukelele, bajoElectrico]
 )
 
-const maestraNatalia = new Maestro(
+const nataliaT = new Maestro(
   2,
   "Natalia",
   "Tarquino",
@@ -39,7 +39,7 @@ const maestraNatalia = new Maestro(
   [iniziacion, guitarraAcustica, guitarraClasica, ukelele]
 )
 
-const maestroOmar = new Maestro(
+const omarM = new Maestro(
   3,
   "Omar",
   "Maldonado",
@@ -49,4 +49,4 @@ const maestroOmar = new Maestro(
   [guitarraAcustica, guitarraElectrica]
 )
 
-export const maestros = [maestroGabriel, maestraNatalia]
+export const maestros = [gabrielM, nataliaT]

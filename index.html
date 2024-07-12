@@ -74,7 +74,7 @@
                 Aquí las notas se convierten en obras de arte, descubre la
                 armonía de tu talento.
               </h4>
-              <a class="btn-primario py-3 px-4" href="./inscripcion.html"
+              <a class="boton btn-primario py-3 px-4" href="./inscripcion.html"
                 >INSCRIBETE</a
               >
             </div>
@@ -83,12 +83,12 @@
       </section>
       <!-- Seccion de cursos -->
       <section class="container py-5">
-        <div class="row gy-4">
-          <div class="col-12">
+        <div class="row gx-4">
+          <div class="col-12 mb-4">
             <h2 class="mb-0 color1">Cursos</h2>
           </div>
           <div
-            class="col-12 col-sm-6 col-md-4 col-xl-3"
+            class="col-12 col-sm-6 col-md-4 col-xl-3 mb-4"
             v-for="curso in cursos"
           >
             <curso-card
@@ -96,25 +96,25 @@
               :nombre="curso.nombre"
               :img="curso.img"
               :link="curso.link"
-            ></curso-card>
+            />
           </div>
         </div>
       </section>
       <!-- Seccion de maestros -->
       <section class="container pb-5">
-        <div class="row g-5">
-          <div class="col-12">
+        <div class="row gx-5">
+          <div class="col-12 mb-4">
             <h2 class="mb-0 color1">Maestros</h2>
           </div>
-          <div
+          <!-- <div
             v-for="maestro in maestros"
             :key="maestro.id"
-            class="col-12"
+            class="col-12 mb-4"
             :class="maestrosLenght"
           >
-            <maestro-card :maestro="maestro"></maestro-card>
-          </div>
-          <!-- <div v-for="maestro in maestros" class="col-12 col-md-6">
+            <maestro-card :maestro="maestro" />
+          </div> -->
+          <div v-for="maestro in maestros" class="col-12 col-md-6">
             <div
               class="card-custom card-maestro position-relative d-flex flex-column justify-content-center align-items-center"
             >
@@ -123,22 +123,27 @@
                 :src="`./assets/images/${maestro.img}`"
                 alt="foto maestro"
               />
-              <div class="z-1">
+              <div class="z-1 d-flex flex-column align-items-center">
                 <h3 class="text-white mb-4">
                   {{ maestro.nombre }} {{ maestro.apellidoPaterno}}
                 </h3>
-                <div>
+                <div class="mb-4">
                   <img
                     v-for="curso in maestro.cursos"
                     :src="`./assets/images/${curso.icono}`"
                     class="me-2"
                     width="50"
-                    alt=""
+                    alt="icono instrumento"
                   />
                 </div>
+
+                <a class="boton btn-phantom px-3 py-2" href="#">
+                  <span>Biografía</span>
+                  <i class="bi-person-circle icon-no-space ms-2"></i>
+                </a>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </section>
       <!-- Footer -->

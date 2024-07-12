@@ -77,16 +77,30 @@ ul {
 
 /* botones */
 
-.btn-primario {
+.boton {
   border: none;
-  background-color: var(--color-1);
-  color: white;
   border-radius: 0.5rem;
   text-decoration: none;
 }
 
+.btn-primario {
+  background-color: var(--color-1);
+  color: white;
+}
+
 .btn-primario:hover {
   background-color: black;
+}
+
+.btn-phantom {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+}
+
+.btn-phantom:hover {
+  background-color: var(--color-1);
+  border: 1px solid transparent;
 }
 
 .form-control:focus {
@@ -124,7 +138,7 @@ ul {
 }
 
 .card-maestro {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
 }
 
 .card-maestro:hover > img {
