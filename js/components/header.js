@@ -1,4 +1,4 @@
-import { hostName, ghHos, imagesBaseUrl } from "../constants.js"
+import { homeUrl, imagesBaseUrl } from "../constants.js"
 
 export const Header = {
   template: `
@@ -32,11 +32,10 @@ export const Header = {
   `,
   computed: {
     logoUrl() {
-      const logoBaseUrl = `${imagesBaseUrl}/logo1.png`
-      return hostName === ghHos ? `/euterpe/${logoBaseUrl}` : `/${logoBaseUrl}`
+      return `${imagesBaseUrl}/logo1.png`
     },
     homeUrl() {
-      return hostName === ghHos ? "/euterpe/" : "/"
+      return homeUrl
     },
   },
 }

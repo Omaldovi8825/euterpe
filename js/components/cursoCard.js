@@ -1,10 +1,10 @@
-import { hostName, ghHos, imagesBaseUrl, cursosBaseUrl } from "../constants.js"
+import { imagesBaseUrl, cursosBaseUrl } from "../constants.js"
 
 export const CursoCard = {
   // template: "#cursoCard",
   template: `
     <div class="card-custom card-instrumento c-pointer">
-      <a :href="linkUrl" target="_blank">        
+      <a :href="linkUrl">        
         <img
           class="w-100 h-100"
           :src="imgUrl"
@@ -19,12 +19,10 @@ export const CursoCard = {
   props: ["nombre", "img", "link"],
   computed: {
     imgUrl() {
-      const imgPath = `${imagesBaseUrl}/${this.img}`
-      return hostName === ghHos ? `/euterpe/${imgPath}` : imgPath
+      return `${imagesBaseUrl}/${this.img}`
     },
     linkUrl() {
-      const cursosPath = `${cursosBaseUrl}/${this.link}.html`
-      return hostName === ghHos ? `/euterpe/${cursosPath}` : cursosPath
+      return `${cursosBaseUrl}/${this.link}.html`
     },
   },
 }

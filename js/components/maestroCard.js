@@ -1,4 +1,4 @@
-import { hostName, ghHos, imagesBaseUrl } from "../constants.js"
+import { imagesBaseUrl } from "../constants.js"
 
 export const MaestroCard = {
   template: `
@@ -10,27 +10,30 @@ export const MaestroCard = {
         :src="imgUrl"
         alt="foto maestro"
       />
-      <div class="z-1">
+      <div class="z-1 d-flex flex-column align-items-center">
         <h3 class="text-white mb-4">
           {{ maestro.nombre }} {{ maestro.apellidoPaterno}}
         </h3>
-        <div>
+        <div class="mb-4">
           <img
             v-for="curso in maestro.cursos"
-            :src="cursoIcon(curso.icono)"
+            :src="cursoIcon"
             class="me-2"
             width="50"
-            alt=""
+            alt="icono instrumento"
           />
         </div>
+        <a class="boton btn-phantom px-3 py-2" href="#">
+          <span>Biografía</span>
+          <i class="bi-person-circle icon-no-space ms-2"></i>
+        </a>
       </div>
     </div>
   `,
   props: ["maestro"],
   computed: {
     imgUrl() {
-      const imgPath = `${imagesBaseUrl}/${this.maestro.img}`
-      return hostName === ghHos ? `/euterpe/${imgPath}` : imgPath
+      return `${imagesBaseUrl}/${this.maestro.img}`
     },
     // linkUrl() {
     //   const cursosPath = `${cursosBaseUrl}/${this.link}.html`
