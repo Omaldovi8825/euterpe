@@ -6,7 +6,7 @@ let imagesBaseUrl = "/assets/images"
 let cursosBaseUrl = "/cursos"
 
 if (hostName === ghHos) {
-  imagesBaseUrl = `/euterpe${homeUrl}`
+  homeUrl = `/euterpe${homeUrl}`
   imagesBaseUrl = `/euterpe${imagesBaseUrl}`
   cursosBaseUrl = `/euterpe${cursosBaseUrl}`
 }
