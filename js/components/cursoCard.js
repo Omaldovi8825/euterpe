@@ -13,7 +13,7 @@ export const CursoCard = {
       </a>
       <h5 class="mb-0 w-100 text-white text-end pe-3 py-1 bg1">
         {{ nombre }}
-      </h5>q
+      </h5>
     </div>
   `,
   props: ["nombre", "img", "link"],
