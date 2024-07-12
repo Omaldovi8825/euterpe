@@ -106,9 +106,39 @@
           <div class="col-12">
             <h2 class="mb-0 color1">Maestros</h2>
           </div>
-          <div v-for="(maestro, i) in maestros" class="col-12" :class="maestrosLenght">
-            <maestro-card :key="i" :maestro="maestro"></maestro-card>
+          <div
+            v-for="maestro in maestros"
+            :key="maestro.id"
+            class="col-12"
+            :class="maestrosLenght"
+          >
+            <maestro-card :maestro="maestro"></maestro-card>
           </div>
+          <!-- <div v-for="maestro in maestros" class="col-12 col-md-6">
+            <div
+              class="card-custom card-maestro position-relative d-flex flex-column justify-content-center align-items-center"
+            >
+              <img
+                class="position-absolute top-0 left-0 w-100 h-100 filtro-gris"
+                :src="`./assets/images/${maestro.img}`"
+                alt="foto maestro"
+              />
+              <div class="z-1">
+                <h3 class="text-white mb-4">
+                  {{ maestro.nombre }} {{ maestro.apellidoPaterno}}
+                </h3>
+                <div>
+                  <img
+                    v-for="curso in maestro.cursos"
+                    :src="`./assets/images/${curso.icono}`"
+                    class="me-2"
+                    width="50"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
       </section>
       <!-- Footer -->

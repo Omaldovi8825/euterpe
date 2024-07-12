@@ -1,54 +1,61 @@
 class Curso {
-  constructor(id, nombre, img, link) {
+  constructor(id, nombre, img, icono, link) {
     this.id = id
     this.nombre = nombre
     this.img = img
+    this.icono = icono
     this.link = link
   }
 }
 
-const cursoIniziacion = new Curso(
+export const iniziacion = new Curso(
   1,
   "Iniciazión musical",
   "iniciazionCard.jpeg",
+  "pentagramaIcon.png",
   "guitarra-clasica"
 )
-const cursoGuitarraAcustica = new Curso(
+export const guitarraAcustica = new Curso(
   2,
   "Guitarra acústica",
   "guitAcusticaCard.jpeg",
+  "acusticGuitarIcon.png",
   "guitarra-clasica"
 )
-const cursoGuitarraClasica = new Curso(
+export const guitarraClasica = new Curso(
   3,
   "Guitarra clásica",
   "guitClasicaCard.jpeg",
+  "clasGuitarIcon.png",
   "guitarra-clasica"
 )
-const cursoGuitarraElectrica = new Curso(
+export const guitarraElectrica = new Curso(
   4,
   "Guitarra eléctrica",
   "guitElectricaCard.webp",
+  "electricGuitarIcon.png",
   "guitarra-clasica"
 )
-const cursoBajoElectrico = new Curso(
+export const bajoElectrico = new Curso(
   5,
   "Bajo eléctrico",
   "bajoCard.jpeg",
+  "bassIcon.png",
   "guitarra-clasica"
 )
-const cursoUkelele = new Curso(
+export const ukelele = new Curso(
   6,
   "Ukelele",
   "ukeleleCard.jpeg",
+  "ukeleleIcon.png",
   "guitarra-clasica"
 )
 
 export const cursos = [
-  cursoIniziacion,
-  cursoGuitarraAcustica,
-  cursoGuitarraClasica,
-  cursoGuitarraElectrica,
-  cursoBajoElectrico,
-  cursoUkelele,
+  iniziacion,
+  guitarraAcustica,
+  guitarraClasica,
+  guitarraElectrica,
+  bajoElectrico,
+  ukelele,
 ]

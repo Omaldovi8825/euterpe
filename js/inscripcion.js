@@ -1,6 +1,27 @@
 import { createApp, ref } from "vue"
 import { Header } from "./components/header.js"
 import { Footer } from "./components/footer.js"
+import { cursos } from "./cursos.js"
+const { jsPDF } = window.jspdf
+const doc = new jsPDF()
+
+const docWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth()
+const halfDocWidth = docWidth / 2
+const mLeftX = 20
+const mRightX = docWidth - mLeftX
+
+function lineaHorizontal(y) {
+  doc.line(mLeftX, y, mRightX, y)
+}
+
+function lineaVertical(x1, y1, x2, y2) {
+  doc.line(x1, y1, x2, y2)
+}
+
+function texto(text, x, y, align) {
+  const coordx = align === "center" ? halfDocWidth : x
+  doc.text(text, coordx, y, { align })
+}
 
 createApp({
   components: {
@@ -9,6 +30,7 @@ createApp({
   },
   data() {
     return {
+      cursos,
       alumno: {
         nombre: "",
         apellidoPaterno: "",
@@ -94,7 +116,68 @@ createApp({
     },
   },
   methods: {
-    enviarForma() {
+    enviarForma(ev) {
+      // doc.html(document.getElementById("form"), {
+      //   callback: function (pdf) {
+      //     pdf.save("doc.pdf")
+      //   },
+      // })
+      const { nombre, apellidoPaterno, apellidoMaterno, dtNacimiento, iCurso } =
+        this.alumno
+      const { calle, numero, colonia, cp, ciudad } = this.alumno.direccion
+
+      const [anio, mes, dia] = dtNacimiento.split("-")
+      const cursoSelec =
+        this.cursos.find(({ id }) => id == iCurso)?.nombre || ""
+      // doc.setTextColor("#ff0000")
+      // doc.text("Formato de inscripción", halfDocWidth, 20, { align: "center" })
+      let desplazamintoY = 0
+      doc.setFontSize(20)
+      desplazamintoY += 20
+      texto("Formato de inscripción", null, desplazamintoY, "center")
+      desplazamintoY += 10
+      lineaHorizontal(desplazamintoY)
+      lineaVertical(mLeftX, desplazamintoY, mLeftX, 300)
+      lineaVertical(mRightX, desplazamintoY, mRightX, 300)
+      doc.setFontSize(18)
+      desplazamintoY += 7
+      texto("Datos del alumno", null, desplazamintoY, "center")
+      desplazamintoY += 3
+      lineaHorizontal(desplazamintoY)
+      doc.setFontSize(14)
+      desplazamintoY += 10
+      texto(
+        `Nombre: ${nombre} ${apellidoPaterno} ${apellidoMaterno}`,
+        mLeftX + 10,
+        desplazamintoY,
+        "left"
+      )
+      texto(
+        `Nombre: ${nombre} ${apellidoPaterno} ${apellidoMaterno}`,
+        mLeftX + 10,
+        desplazamintoY,
+        "left"
+      )
+      desplazamintoY += 10
+      texto(
+        `Fecha de nacimineto: ${dia}/${mes}/${anio}`,
+        mLeftX + 10,
+        desplazamintoY,
+        "left"
+      )
+      desplazamintoY += 10
+      texto(`Curso: ${cursoSelec}`, mLeftX + 10, desplazamintoY, "left")
+      desplazamintoY += 10
+      texto(
+        `Direccion: ${calle} ${numero}, ${colonia}. ${cp}, ${ciudad}`,
+        mLeftX + 10,
+        desplazamintoY,
+        "left"
+      )
+
+      doc.save()
+
+      return
       console.log({
         alumno: {
           nombre: this.alumno.nombre,
