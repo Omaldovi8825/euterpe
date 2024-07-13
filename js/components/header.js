@@ -3,7 +3,9 @@ import { homeUrl, imagesBaseUrl } from "../constants.js"
 export const Header = {
   template: `
     <header
-      class="bg1 d-flex justify-content-around align-items-center py-2 sticky-top"
+      id="header"
+      class="d-flex justify-content-around align-items-center py-2"
+      :class="[fixed, showBackGround ? 'bg1' : '']"
     >
       <a :href="homeUrl">
         <img
@@ -30,12 +32,43 @@ export const Header = {
       </nav>
     </header>
   `,
-  computed: {
-    logoUrl() {
-      return `${imagesBaseUrl}/logo1.png`
+  // props: ["fixed", "backGround"],
+  props: {
+    fixed: {
+      type: String,
+      default: "sticky-top",
     },
-    homeUrl() {
-      return homeUrl
+    backGround: {
+      type: Boolean,
+      default: true,
     },
+  },
+  data() {
+    return {
+      homeUrl,
+      logoUrl: `${imagesBaseUrl}/logo1.png`,
+      showBackGround: this.backGround,
+    }
+  },
+  methods: {
+    headerFantasmaOn() {
+      const options = {
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+
+      const callback = (entries, observer) => {
+        const [entry] = entries
+        this.showBackGround = !entry?.isIntersecting
+      }
+
+      const observer = new IntersectionObserver(callback, options)
+      observer.observe(this.$parent.$refs.parallax)
+    },
+  },
+  mounted() {
+    if (!this.backGround) {
+      this.headerFantasmaOn()
+    }
   },
 }

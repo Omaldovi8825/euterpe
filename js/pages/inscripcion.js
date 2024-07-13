@@ -1,7 +1,7 @@
 import { createApp, ref } from "vue"
-import { Header } from "./components/header.js"
-import { Footer } from "./components/footer.js"
-import { cursos } from "./cursos.js"
+import { Header } from "../components/header.js"
+import { Footer } from "../components/footer.js"
+import { cursos } from "../cursos.js"
 const { jsPDF } = window.jspdf
 const doc = new jsPDF()
 

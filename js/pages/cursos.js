@@ -1,4 +1,4 @@
-import { createApp, ref } from "vue"
+import { createApp } from "vue"
 import { Header } from "../components/header.js"
 import { Footer } from "../components/footer.js"
 

@@ -17,7 +17,7 @@ export const MaestroCard = {
         <div class="mb-4">
           <img
             v-for="curso in maestro.cursos"
-            :src="cursoIcon"
+            :src="cursoIcon(curso.icono)"
             class="me-2"
             width="50"
             alt="icono instrumento"
