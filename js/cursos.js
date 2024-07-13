@@ -8,19 +8,19 @@ class Curso {
   }
 }
 
-export const iniziacion = new Curso(
+export const iniciazion = new Curso(
   1,
   "Iniciazión musical",
   "iniciazionCard.jpeg",
   "pentagramaIcon.png",
-  "guitarra-clasica"
+  "iniciazion-musical"
 )
 export const guitarraAcustica = new Curso(
   2,
   "Guitarra acústica",
   "guitAcusticaCard.jpeg",
   "acusticGuitarIcon.png",
-  "guitarra-clasica"
+  "guitarra-acustica"
 )
 export const guitarraClasica = new Curso(
   3,
@@ -34,25 +34,25 @@ export const guitarraElectrica = new Curso(
   "Guitarra eléctrica",
   "guitElectricaCard.webp",
   "electricGuitarIcon.png",
-  "guitarra-clasica"
+  "guitarra-electrica"
 )
 export const bajoElectrico = new Curso(
   5,
   "Bajo eléctrico",
   "bajoCard.jpeg",
   "bassIcon.png",
-  "guitarra-clasica"
+  "bajo-electrico"
 )
 export const ukelele = new Curso(
   6,
   "Ukelele",
   "ukeleleCard.jpeg",
   "ukeleleIcon.png",
-  "guitarra-clasica"
+  "ukelele"
 )
 
 export const cursos = [
-  iniziacion,
+  iniciazion,
   guitarraAcustica,
   guitarraClasica,
   guitarraElectrica,

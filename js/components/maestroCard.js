@@ -3,7 +3,7 @@ import { imagesBaseUrl } from "../constants.js"
 export const MaestroCard = {
   template: `
     <div
-      class="card-custom card-maestro position-relative d-flex flex-column justify-content-center align-items-center"
+      class="card-custom card-maestro position-relative d-flex flex-column justify-content-center align-items-center aspect-ratio-4-3"
     >
       <img
         class="position-absolute top-0 left-0 w-100 h-100 filtro-gris"

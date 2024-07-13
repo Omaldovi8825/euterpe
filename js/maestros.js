@@ -3,7 +3,7 @@ import {
   guitarraClasica,
   ukelele,
   bajoElectrico,
-  iniziacion,
+  iniciazion,
   guitarraElectrica,
 } from "./cursos.js"
 
@@ -36,7 +36,7 @@ const nataliaT = new Maestro(
   "Alarcón",
   "nataCard.jpeg",
   "natalia-tarquino",
-  [iniziacion, guitarraAcustica, guitarraClasica, ukelele]
+  [iniciazion, guitarraAcustica, guitarraClasica, ukelele]
 )
 
 const omarM = new Maestro(

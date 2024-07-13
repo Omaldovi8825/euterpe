@@ -60,6 +60,18 @@ ul {
   cursor: pointer;
 }
 
+.aspect-ratio-1-1{
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-ratio-2-1{
+  aspect-ratio: 2 / 1;
+}
+
+.aspect-ratio-4-3{
+  aspect-ratio: 4 / 3;
+}
+
 .filtro-gris {
   filter: grayscale(100%);
   transition: filter 1s;
@@ -109,18 +121,12 @@ ul {
 }
 
 .card-custom {
-  position: relative;
   border-radius: 1rem;
   overflow: hidden;
-  /* aspect-ratio: 1 / 1; */
 }
 
 .card-custom img {
   object-fit: cover;
-}
-
-.card-instrumento {
-  aspect-ratio: 1 / 1;
 }
 
 .card-instrumento h5 {
@@ -135,10 +141,6 @@ ul {
 
 .card-instrumento img:hover {
   transform: scale(1.2);
-}
-
-.card-maestro {
-  aspect-ratio: 4 / 3;
 }
 
 .card-maestro:hover > img {
