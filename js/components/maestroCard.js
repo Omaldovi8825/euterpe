@@ -1,4 +1,4 @@
-import { imagesBaseUrl } from "../constants.js"
+import { imagesBaseUrl, maestrosBaseUrl } from "../constants.js"
 
 export const MaestroCard = {
   template: `
@@ -23,7 +23,7 @@ export const MaestroCard = {
             alt="icono instrumento"
           />
         </div>
-        <a class="boton btn-phantom px-3 py-2" href="#">
+        <a class="boton btn-phantom px-3 py-2" :href="link">
           <span>Biografía</span>
           <i class="bi-person-circle icon-no-space ms-2"></i>
         </a>
@@ -31,14 +31,11 @@ export const MaestroCard = {
     </div>
   `,
   props: ["maestro"],
-  computed: {
-    imgUrl() {
-      return `${imagesBaseUrl}/${this.maestro.img}`
-    },
-    // linkUrl() {
-    //   const cursosPath = `${cursosBaseUrl}/${this.link}.html`
-    //   return hostName === ghHos ? `/euterpe/${cursosPath}` : cursosPath
-    // },
+  data() {
+    return {
+      imgUrl: `${imagesBaseUrl}/${this.maestro.img}`,
+      link: `${maestrosBaseUrl}.html?id=${this.maestro.link}`,
+    }
   },
   methods: {
     cursoIcon(icon) {

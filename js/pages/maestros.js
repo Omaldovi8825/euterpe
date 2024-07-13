@@ -2,12 +2,12 @@
 const { createApp } = Vue
 import { Header } from "../components/header.js"
 import { Footer } from "../components/footer.js"
-import { cursos } from "../cursos.js"
+import { maestros } from "../maestros.js"
 import { imagesBaseUrl } from "../constants.js"
 
 const queryParams = new URLSearchParams(window.location.search)
-const idCurso = queryParams.get("id")
-const curso = cursos.find(({ link }) => link === idCurso)
+const idMaestro = queryParams.get("id")
+const maestro = maestros.find(({ link }) => link === idMaestro)
 
 createApp({
   components: {
@@ -16,12 +16,12 @@ createApp({
   },
   data() {
     return {
-      curso,
+      maestro,
     }
   },
   computed: {
     imgUrl() {
-      return `${imagesBaseUrl}/${this.curso.img}`
+      return `${imagesBaseUrl}/${this.maestro.img}`
     },
   },
 }).mount("#app")
