@@ -1,4 +1,5 @@
-import { createApp } from "vue"
+// import { createApp } from "vue"
+const { createApp } = Vue
 import { Header } from "../components/header.js"
 import { Footer } from "../components/footer.js"
 import { CursoCard } from "../components/cursoCard.js"
