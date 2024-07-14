@@ -11,7 +11,7 @@ export const CursoCard = {
           :alt="curso.nombre"
         />
       </a>
-      <h5 class="mb-0 w-100 text-white text-end pe-3 py-1 bg1">
+      <h5 class="mb-0 w-100 text-white text-end pe-3 py-2 bg1-phantom">
         {{ curso.nombre }}
       </h5>
     </div>

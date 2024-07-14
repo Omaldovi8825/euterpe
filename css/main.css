@@ -10,6 +10,7 @@
 
 :root {
   --color-1: #7c2043;
+  --color-1-phantom: #7c2043c7;
   --color-dark: black;
   /* --header-height: 75px; */
 }
@@ -33,6 +34,9 @@ ul {
 .bg1 {
   background-color: var(--color-1);
 }
+.bg1-phantom {
+  background-color: var(--color-1-phantom);
+}
 .bg-dark {
   background-color: var(--color-dark);
 }
@@ -40,10 +44,6 @@ ul {
 /* paddings */
 .pt-6 {
   padding-top: 5rem;
-}
-
-.py-6 {
-  padding: 5rem 0;
 }
 
 /* font-size */

@@ -20,7 +20,11 @@ export const Footer = {
             <nav>
               <ul class="d-flex">
                 <li>
-                  <a class="text-white" href="#">
+                  <a 
+                    class="text-white"
+                    href="https://www.facebook.com/profile.php?id=61556938195712"
+                    target="_blank"
+                  >
                     <i class="bi bi-facebook fs-social me-3"></i>
                   </a>
                 </li>
