@@ -1,7 +1,7 @@
 import { imagesBaseUrl, maestrosBaseUrl } from "../constants.js"
 
 export const MaestroCard = {
-  template: `
+  template: /*html*/`
     <div
       class="card-custom card-maestro position-relative d-flex flex-column justify-content-center align-items-center aspect-ratio-4-3"
     >

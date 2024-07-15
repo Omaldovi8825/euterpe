@@ -2,7 +2,7 @@ import { imagesBaseUrl, cursosBaseUrl } from "../constants.js"
 
 export const CursoCard = {
   // template: "#cursoCard",
-  template: `
+  template: /*html*/`
     <div class="card-custom card-instrumento position-relative c-pointer aspect-ratio-1-1">
       <a :href="linkUrl">        
         <img

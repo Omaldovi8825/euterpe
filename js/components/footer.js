@@ -1,5 +1,5 @@
 export const Footer = {
-  template: `
+  template: /*html*/`
     <footer class="bg-dark pt-6 pb-3">
       <div class="container">
         <div class="row">

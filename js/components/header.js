@@ -1,7 +1,7 @@
 import { homeUrl, imagesBaseUrl } from "../constants.js"
 
 export const Header = {
-  template: `
+  template: /*html*/`
     <header
       id="header"
       class="d-flex justify-content-around align-items-center py-2"
