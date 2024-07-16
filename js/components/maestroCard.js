@@ -1,7 +1,7 @@
-import { imagesBaseUrl, maestrosBaseUrl } from "../constants.js"
+import { cursosBaseUrl, imagesBaseUrl, maestrosBaseUrl } from "../constants.js"
 
 export const MaestroCard = {
-  template: /*html*/`
+  template: /*html*/ `
     <div
       class="card-custom card-maestro position-relative d-flex flex-column justify-content-center align-items-center aspect-ratio-4-3"
     >
@@ -15,13 +15,17 @@ export const MaestroCard = {
           {{ maestro.nombre }} {{ maestro.apellidoPaterno}}
         </h3>
         <div class="mb-4">
-          <img
+          <a
             v-for="curso in maestro.cursos"
-            :src="cursoIcon(curso.icono)"
-            class="me-2"
-            width="50"
-            alt="icono instrumento"
-          />
+            :href="getCursoLink(curso.link)"
+          >          
+            <img
+              :src="getCursoIcon(curso.icono)"
+              class="me-2"
+              width="50"
+              alt="icono instrumento"
+            />
+          </a>
         </div>
         <a class="boton btn-phantom px-3 py-2" :href="link">
           <span>Biografía</span>
@@ -38,8 +42,11 @@ export const MaestroCard = {
     }
   },
   methods: {
-    cursoIcon(icon) {
+    getCursoIcon(icon) {
       return `${imagesBaseUrl}/${icon}`
+    },
+    getCursoLink(link) {
+      return `${cursosBaseUrl}.html?id=${link}`
     },
   },
 }

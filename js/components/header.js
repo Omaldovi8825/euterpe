@@ -32,7 +32,6 @@ export const Header = {
       </nav>
     </header>
   `,
-  // props: ["fixed", "backGround"],
   props: {
     fixed: {
       type: String,
@@ -53,7 +52,6 @@ export const Header = {
   methods: {
     headerFantasmaOn() {
       const options = {
-        rootMargin: "0px",
         threshold: 0.5,
       }
 
