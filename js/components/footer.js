@@ -1,15 +1,26 @@
+import { homeUrl } from "../constants.js"
 import { contacto } from "../contacto.js"
 
 export const Footer = {
-  data() {
-    return {
-      contacto,
-    }
-  },
   template: /*html*/ `
     <footer class="bg-dark pt-6 pb-3">
       <div class="container">
         <div class="row">
+          <div class="col-12 col-md-4 mb-5 text-white">
+            <h5 class="mb-4 fw-bold">Enlaces</h5>
+            <nav>
+              <ul>
+                <li v-for="enlace in links" class="mb-2">
+                  <a
+                    class="text-white text-decoration-none"
+                    :href="enlace.link"
+                  >
+                    {{ enlace.nombre }}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
           <div class="col-12 col-md-4 mb-5 text-white">
             <h5 class="mb-4 fw-bold">Contacto</h5>
             <p v-for="telefono in contacto.telefonos">
@@ -28,7 +39,7 @@ export const Footer = {
                     :href="link"
                     target="_blank"
                   >
-                    <i :class="'bi bi-' + nombre + ' fs-social me-3'"></i>
+                    <i :class="'bi bi-' + nombre + ' fs-3 icon-no-space me-3'"></i>
                   </a>
                 </li>
               </ul>
@@ -49,16 +60,6 @@ export const Footer = {
             <p>{{ direccion.colonia }}, {{ direccion.cp}}</p>
             <p>{{ direccion.ciudad }}, {{ direccion.estado }}</p>
           </div>
-          <div class="col-12 col-md-4 mb-5">
-            <iframe
-              :src="direccion.googleIframeLink"
-              class="w-100 h-100 rounded rounded-lg"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
           <div class="col-12 text-white">
             <p class="text-center">
               Copyright © Euterpe Academia de Música – Todos los derechos
@@ -69,6 +70,21 @@ export const Footer = {
       </div>
     </footer>
   `,
+  data() {
+    return {
+      contacto,
+      links: [
+        {
+          nombre: "Inscripción",
+          link: `${homeUrl}inscripcion.html`,
+        },
+        {
+          nombre: "Contacto",
+          link: `${homeUrl}contacto.html`,
+        },
+      ],
+    }
+  },
   computed: {
     direccion() {
       return this.contacto.direccion

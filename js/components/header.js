@@ -26,7 +26,12 @@ export const Header = {
             <a href="#" class="text-decoration-none text-white">Galería</a>
           </li>
           <li class="ms-4">
-            <a href="#" class="text-decoration-none text-white">Contacto</a>
+            <a
+              href="./contacto.html"
+              class="text-decoration-none text-white"
+            >
+              Contacto
+            </a>
           </li>
         </ul>
       </nav>
