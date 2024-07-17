@@ -38,7 +38,7 @@ export const MaestroCard = {
   data() {
     return {
       imgUrl: `${imagesBaseUrl}/${this.maestro.img}`,
-      link: `${maestrosBaseUrl}.html?id=${this.maestro.link}`,
+      link: `${maestrosBaseUrl}.html?id=${this.maestro.id}`,
     }
   },
   methods: {

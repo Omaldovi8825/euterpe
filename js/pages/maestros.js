@@ -6,8 +6,8 @@ import { maestros } from "../maestros.js"
 import { imagesBaseUrl } from "../constants.js"
 
 const queryParams = new URLSearchParams(window.location.search)
-const idMaestro = queryParams.get("id")
-const maestro = maestros.find(({ link }) => link === idMaestro)
+const idMaestro = Number(queryParams.get("id"))
+const maestro = maestros.find(({ id }) => id === idMaestro)
 
 createApp({
   components: {

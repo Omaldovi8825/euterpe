@@ -9,6 +9,7 @@
 
     <!-- JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="./js/vue.js"></script> -->
   </head>
   <body>
     <!-- APP -->
@@ -23,7 +24,7 @@
               <h1 class="color1 mb-3 text-center">
                 {{ maestro.nombre }} {{ maestro.apellidoPaterno }}
               </h1>
-              <p v-for="par in maestro.bio">{{ par }}</p>
+              <div v-html="maestro.bio"></div>
               <div>
                 <h4 class="color1">Cursos que imparte:</h4>
                 <ul>
