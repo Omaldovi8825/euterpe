@@ -63,7 +63,7 @@ export const Footer = {
           <div class="col-12 text-white">
             <p class="text-center">
               Copyright © Euterpe Academia de Música – Todos los derechos
-              reservados 2024.
+              reservados {{ currentYear }}.
             </p>
           </div>
         </div>
@@ -88,6 +88,10 @@ export const Footer = {
   computed: {
     direccion() {
       return this.contacto.direccion
+    },
+    currentYear() {
+      const dt = new Date()
+      return dt.getFullYear()
     },
   },
 }

@@ -6,8 +6,8 @@ import { cursos } from "../cursos.js"
 import { imagesBaseUrl } from "../constants.js"
 
 const queryParams = new URLSearchParams(window.location.search)
-const idCurso = queryParams.get("id")
-const curso = cursos.find(({ link }) => link === idCurso)
+const idCurso = Number(queryParams.get("id"))
+const curso = cursos.find(({ id }) => id === idCurso)
 
 createApp({
   components: {

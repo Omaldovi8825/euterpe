@@ -21,8 +21,8 @@ createApp({
     }
   },
   computed: {
-    maestrosLenght() {
-      return this.maestros.length >= 3 ? "col-md-4" : "col-md-6"
+    columnSize() {
+      return this.maestros.length > 2 ? "col-sm-4" : "col-sm-6"
     },
   },
 }).mount("#app")

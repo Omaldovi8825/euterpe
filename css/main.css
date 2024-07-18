@@ -11,6 +11,7 @@
 :root {
   --color-1: #7c2043;
   --color-1-phantom: #7c2043c7;
+  --color-2: #eea4c0;
   --color-dark: black;
   /* --header-height: 75px; */
 }
@@ -37,6 +38,14 @@ ul {
 .bg1-phantom {
   background-color: var(--color-1-phantom);
 }
+.bg2 {
+  background-color: var(--color-2);
+}
+.bg2-hov:hover {
+  background-color: var(--color-1);
+  color: white;
+  transition: 0.5s;
+}
 .bg-dark {
   background-color: var(--color-dark);
 }
@@ -50,10 +59,6 @@ ul {
 .fs-social {
   font-size: 1.5rem;
 }
-
-/* .fs-2 {
-  font-size: 2rem;
-} */
 
 /* Colores */
 .color1 {

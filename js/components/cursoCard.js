@@ -20,7 +20,7 @@ export const CursoCard = {
   data() {
     return {
       imgUrl: `${imagesBaseUrl}/${this.curso.img}`,
-      linkUrl: `${cursosBaseUrl}.html?id=${this.curso.link}`,
+      linkUrl: `${cursosBaseUrl}.html?id=${this.curso.id}`,
     }
   },
 }

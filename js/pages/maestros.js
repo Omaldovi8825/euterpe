@@ -22,6 +22,10 @@ createApp({
   computed: {
     imgUrl() {
       return `${imagesBaseUrl}/${this.maestro.img}`
+      // return "#"
+    },
+    imgAlt() {
+      return `${this.maestro.nombre} ${this.maestro.apellidoPaterno}`
     },
   },
 }).mount("#app")
