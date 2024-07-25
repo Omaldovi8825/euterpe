@@ -21,51 +21,53 @@
         <div class="container py-5">
           <div class="row">
             <div class="col-12 col-lg-5 col-xl-4 mb-4">
-              <!-- Contacto -->
-              <section class="mb-4">
-                <h3 class="color1 mb-3">Contacto:</h3>
-                <p v-for="telefono in contacto.telefonos">
-                  <i class="bi bi-telephone icon-no-space me-2"></i>
-                  {{ telefono }}
-                </p>
-                <p>
-                  <i class="bi bi-envelope icon-no-space me-2"></i>
-                  {{ contacto.email }}
-                </p>
-              </section>
-              <!-- Direccion -->
-              <section class="mb-4">
-                <h3 class="color1 mb-3">Dirección:</h3>
-                <p>
-                  <i class="bi bi-geo-alt icon-no-space me-2"></i>
-                  <a
-                    class="text-dark"
-                    :href="direccion.googleLink"
-                    target="_blank"
-                  >
-                    {{ direccion.calle }} #{{ direccion.numero }}
-                  </a>
-                </p>
-                <p>{{ direccion.colonia }}, {{ direccion.cp}}</p>
-                <p>{{ direccion.ciudad }}, {{ direccion.estado }}</p>
-              </section>
-              <!-- Redes -->
-              <section>
-                <h3 class="color1 mb-3">Síguenos en:</h3>
-                <nav>
-                  <ul class="d-flex">
-                    <li v-for="({ nombre, link }) in contacto.redes">
-                      <a class="color1" :href="link" target="_blank">
-                        <i
-                          :class="`bi bi-${nombre} fs-2 icon-no-space me-3`"
-                        ></i>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </section>
+              <div class="bg2 p-3 rounded">
+                <!-- Contacto -->
+                <section class="mb-4">
+                  <h3 class="color1 mb-3">Contacto:</h3>
+                  <p v-for="telefono in contacto.telefonos">
+                    <i class="bi bi-telephone icon-no-space me-2"></i>
+                    {{ telefono }}
+                  </p>
+                  <p>
+                    <i class="bi bi-envelope icon-no-space me-2"></i>
+                    {{ contacto.email }}
+                  </p>
+                </section>
+                <!-- Direccion -->
+                <section class="mb-4">
+                  <h3 class="color1 mb-3">Dirección:</h3>
+                  <p>
+                    <i class="bi bi-geo-alt icon-no-space me-2"></i>
+                    <a
+                      class="text-dark"
+                      :href="direccion.googleLink"
+                      target="_blank"
+                    >
+                      {{ direccion.calle }} #{{ direccion.numero }}
+                    </a>
+                  </p>
+                  <p>{{ direccion.colonia }}, {{ direccion.cp}}</p>
+                  <p>{{ direccion.ciudad }}, {{ direccion.estado }}</p>
+                </section>
+                <!-- Redes -->
+                <section>
+                  <h3 class="color1 mb-3">Síguenos en:</h3>
+                  <nav>
+                    <ul class="d-flex">
+                      <li v-for="({ nombre, link }) in contacto.redes">
+                        <a class="color1" :href="link" target="_blank">
+                          <i
+                            :class="`bi bi-${nombre} fs-2 icon-no-space me-3`"
+                          ></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </section>
+              </div>
             </div>
-            <div class="col-12 col-lg-7 col-xl-8">
+            <div class="col-12 col-lg-7 col-xl-8 mb-4">
               <iframe
                 :src="direccion.googleIframeLink"
                 class="w-100 h-100 rounded"

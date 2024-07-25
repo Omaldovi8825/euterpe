@@ -9,9 +9,9 @@ import { maestros } from "../maestros.js"
 
 createApp({
   components: {
+    mainHeader: Header,
     cursoCard: CursoCard,
     maestroCard: MaestroCard,
-    mainHeader: Header,
     mainFooter: Footer,
   },
   data() {
