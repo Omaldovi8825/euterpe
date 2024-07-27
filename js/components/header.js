@@ -1,7 +1,11 @@
 import { homeUrl, imagesBaseUrl } from "../constants.js"
+import { MenuCel } from "./menuCel.js"
 
 export const Header = {
-  template: /*html*/`
+  components: {
+    MenuCel,
+  },
+  template: /*html*/ `
     <header
       id="header"
       class="d-flex justify-content-around align-items-center py-2"
@@ -14,7 +18,7 @@ export const Header = {
           alt="logo euterpe"
         />
       </a>
-      <nav class="menu">
+      <nav class="d-none d-md-block">
         <ul class="d-flex">
           <li>
             <a href="#" class="text-decoration-none text-white">Cursos</a>
@@ -35,6 +39,10 @@ export const Header = {
           </li>
         </ul>
       </nav>
+      <div class="d-block d-md-none" @click="abrirMenuCel">
+        <i class="bi bi-list text-white fs-1"></i>
+        <menu-cel v-if="showMenuCel"></menu-cel>
+      </div>
     </header>
   `,
   props: {
@@ -52,9 +60,21 @@ export const Header = {
       homeUrl,
       logoUrl: `${imagesBaseUrl}/logo1.png`,
       showBackGround: this.backGround,
+      showMenuCel: false,
+    }
+  },
+  provide() {
+    return {
+      cerrarMenuCel: this.cerrarMenuCel,
     }
   },
   methods: {
+    abrirMenuCel() {
+      this.showMenuCel = true
+    },
+    cerrarMenuCel() {
+      this.showMenuCel = false
+    },
     headerFantasmaOn() {
       const options = {
         threshold: 0.5,

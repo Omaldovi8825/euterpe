@@ -65,6 +65,10 @@ ul {
   color: var(--color-1);
 }
 
+.z-1031 {
+  z-index: 1031;
+}
+
 .borde {
   border: 1px solid black;
 }
@@ -73,15 +77,15 @@ ul {
   cursor: pointer;
 }
 
-.aspect-ratio-1-1{
+.aspect-ratio-1-1 {
   aspect-ratio: 1 / 1;
 }
 
-.aspect-ratio-2-1{
+.aspect-ratio-2-1 {
   aspect-ratio: 2 / 1;
 }
 
-.aspect-ratio-4-3{
+.aspect-ratio-4-3 {
   aspect-ratio: 4 / 3;
 }
 

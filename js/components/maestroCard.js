@@ -17,7 +17,7 @@ export const MaestroCard = {
         <div class="mb-4">
           <a
             v-for="curso in maestro.cursos"
-            :href="getCursoLink(curso.link)"
+            :href="getCursoLink(curso.id)"
           >          
             <img
               :src="getCursoIcon(curso.icono)"
@@ -45,8 +45,8 @@ export const MaestroCard = {
     getCursoIcon(icon) {
       return `${imagesBaseUrl}/${icon}`
     },
-    getCursoLink(link) {
-      return `${cursosBaseUrl}.html?id=${link}`
+    getCursoLink(id) {
+      return `${cursosBaseUrl}.html?id=${id}`
     },
   },
 }
